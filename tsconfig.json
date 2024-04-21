@@ -8,5 +8,5 @@
     },
     "include": [
       "./**/*.ts"
-    ],
+, "back/db/mongoDb.ts", "back/controllers/auth.controller.ts", "back/utils/validation.auth.ts"    ],
   }
