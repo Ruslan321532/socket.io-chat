@@ -1,8 +1,9 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import dotenv from "dotenv";
 import connectMongoDb from "./db/mongoDb";
 import authRoutes from "./routes/auth.routes";
-
+import messagesRoutes from "./routes/messages.route"
+import cookieParser from "cookie-parser";
 dotenv.config();
 
 const app = express();
@@ -19,7 +20,9 @@ const startServer = async () => {
   }
 };
 
+app.use(cookieParser());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
+app.use('/api/messages', messagesRoutes)
 
 startServer();
