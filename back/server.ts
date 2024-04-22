@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectMongoDb from "./db/mongoDb";
 import authRoutes from "./routes/auth.routes";
 import messagesRoutes from "./routes/messages.route"
+import userRoutes from "./routes/user.route"
 import cookieParser from "cookie-parser";
 dotenv.config();
 
@@ -24,5 +25,6 @@ app.use(cookieParser());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use('/api/messages', messagesRoutes)
+app.use('/api/users', userRoutes )
 
 startServer();
